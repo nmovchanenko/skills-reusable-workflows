@@ -26,4 +26,4 @@ jobs:
           echo ${{ github.repository }}
           echo ${{ github.repository_owner }}
 
-          node index.js ${{ inputs.environment_name }}
+          node src/index.js ${{ inputs.environment_name }} ${{ github.repository }} ${{ github.repository_owner }}
