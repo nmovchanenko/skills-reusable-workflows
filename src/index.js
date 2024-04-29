@@ -1,19 +1,11 @@
 import axios from 'axios';
 
-process.argv.forEach(function (val, index, array) {
-    console.log(index + ': ' + val);
-});
-
-async function run(env) {
-    if(!env) {
-        throw new Error('env required');
-    }
-
+async function run() {
     const {
         ENV,
-        REPO_OWNER: owner,
-        REPO_NAME: repo,
-        GITHUB_TOKEN: token,
+        REPO_OWNER,
+        REPO_NAME,
+        GITHUB_TOKEN,
     } = process.env;
 
     let payload = {
@@ -23,8 +15,8 @@ async function run(env) {
         }
     };
 
-    console.log(`Received ${env || "No"} command`);
-    switch(env) {
+    console.log(`Received ${ENV || "No"} command`);
+    switch(ENV) {
         case "ping":
             payload.event_type = 'event type here ping';
             payload.client_payload.command = "pong";
@@ -37,27 +29,28 @@ async function run(env) {
             console.log('I GUESS WE ARE DONE!!! :-D');
             return;
         default:
-            console.log(env);
+            console.log(ENV);
     }
 
-    if(!owner || !repo || !token) {
+    if(!REPO_OWNER || !REPO_NAME || !GITHUB_TOKEN) {
         throw new Error('Owner and repo required');
     }
 
-    const dispatchUrl = `https://api.github.com/repos/${owner}/${repo}/dispatches`;
+    const dispatchUrl = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/dispatches`;
 
     console.log(`Dispatching ${dispatchUrl} with payload`, payload);
-    const res = await axios.post(dispatchUrl, payload, {
-        headers: {
-            Authorization: `Bearer ${token}`,
-            Accept: "application/vnd.github.v3+json"
-        }
-    })
-    return res.status;
 
+    // const res = await axios.post(dispatchUrl, payload, {
+    //     headers: {
+    //         Authorization: `Bearer ${GITHUB_TOKEN}`,
+    //         Accept: "application/vnd.github.v3+json"
+    //     }
+    // });
+    //
+    // return res.status;
 }
 
-run(ENV)
+run()
     .then(() => console.log('Completed running command'))
     .catch(e => {
         console.log(e.message);
