@@ -31,4 +31,4 @@ jobs:
           echo ${{ secrets.TOKEN }}
           echo ${{ secrets.github_token }}
 
-          ENV=${{ inputs.environment_name }} REPO_OWNER=${{ github.repository_owner }} REPO_NAME=${{ github.repository }} GITHUB_TOKEN=${{ secrets.github_token }} node src/index.js
+          ENV=${{ inputs.environment_name }} REPO_OWNER=${{ github.repository_owner }} REPO_NAME=${{ github.repository }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} node src/index.js
