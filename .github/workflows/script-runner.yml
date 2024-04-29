@@ -20,6 +20,9 @@ jobs:
       - name: Install packages
         run: npm i
 
+      - name: Print
+        run: env | sort
+
       - name: Run Script
         run: |
           echo ${{ inputs.environment_name }}
