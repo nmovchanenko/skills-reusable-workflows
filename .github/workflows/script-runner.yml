@@ -12,6 +12,8 @@ on:
           - "staging"
           - "integration"
 
+permissions: write-all
+
 jobs:
   ping:
     runs-on: ubuntu-latest
