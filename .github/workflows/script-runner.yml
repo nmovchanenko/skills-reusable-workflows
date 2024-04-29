@@ -26,4 +26,4 @@ jobs:
           echo ${{ github.repository }}
           echo ${{ github.repository_owner }}
 
-          node src/index.js ${{ inputs.environment_name }} ${{ github.repository }} ${{ github.repository_owner }}
+          ENV=${{ inputs.environment_name }} REPO_OWNER=${{ github.repository_owner }} REPO_NAME=${{ github.repository }} GITHUB_TOKEN="ddd" node src/index.js
