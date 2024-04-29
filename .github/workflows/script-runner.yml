@@ -1,10 +1,5 @@
 name: Run JS script
 
-env:
-  REPO_OWNER: ${{ github.repository_owner }}
-  REPO_NAME: ${{ github.repository }}
-  GITHUB_TOKEN: ${{ secrets.TOKEN }}
-
 on:
   workflow_dispatch:
     inputs:
@@ -33,5 +28,7 @@ jobs:
           echo ${{ inputs.environment_name }}
           echo ${{ github.repository }}
           echo ${{ github.repository_owner }}
+          echo ${{ secrets.TOKEN }}
+          echo ${{ secrets.github_token }}
 
-          ENV=${{ inputs.environment_name }} node src/index.js
+          ENV=${{ inputs.environment_name }} REPO_OWNER=${{ github.repository_owner }} REPO_NAME=${{ github.repository }} GITHUB_TOKEN=${{ secrets.github_token }} node src/index.js
