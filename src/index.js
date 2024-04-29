@@ -9,28 +9,12 @@ async function run() {
     } = process.env;
 
     let payload = {
-        event_type: "",
+        event_type: "promoteToStaging",
         client_payload: {
-            command: ""
+            passed: 9,
+            failed: 1
         }
     };
-
-    console.log(`Received ${ENV || "No"} command`);
-    switch(ENV) {
-        case "ping":
-            payload.event_type = 'event type here ping';
-            payload.client_payload.command = "pong";
-            break;
-        case "pong":
-            payload.event_type = `event type pong`;
-            payload.client_payload.command = "done";
-            break;
-        case "done":
-            console.log('I GUESS WE ARE DONE!!! :-D');
-            return;
-        default:
-            console.log(ENV);
-    }
 
     if(!REPO_OWNER || !REPO_NAME || !GITHUB_TOKEN) {
         throw new Error('Owner and repo required');
@@ -40,7 +24,6 @@ async function run() {
     const dispatchUrl = `https://api.github.com/repos/${owner}/${repo}/dispatches`;
 
     console.log(`Dispatching ${dispatchUrl} with payload`, payload);
-    console.log(`Bearer ${GITHUB_TOKEN}`);
 
     const res = await axios.post(dispatchUrl, payload, {
         headers: {
