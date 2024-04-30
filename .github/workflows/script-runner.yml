@@ -2,7 +2,8 @@ name: Run JS script
 
 on:
   schedule:
-    - cron: "40 15 * * *"
+    - cron: '00 14 * * *'
+
   workflow_dispatch:
     inputs:
       environment_name:
