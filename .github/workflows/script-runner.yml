@@ -25,6 +25,23 @@ jobs:
       - name: Print
         run: env | sort
 
+      - name: Run Playwright Tests
+        shell: bash
+        run: |
+          echo '{
+                "runId": "RUN_TOKEN",
+                "action": "getTestList",
+                "args": {
+                  "environment": "environment",
+                  "limitTests": "testCaseIdentifiers",
+                  "slackChannel": "slackChannel",
+                  "createTestRunInTestRail": "createTestRunInTestRail",
+                  "reportTitle": "reportTitle",
+                  "statusAutoinvite": "statusAutoinvite",
+                  "dispatchParams": "dispatchParams"
+                }
+              }'
+
       - name: Run Script
         run: |
           echo ${{ inputs.environment_name }}

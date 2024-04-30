@@ -10,4 +10,4 @@ jobs:
     steps:
       - name: Event Information
         run: |
-          echo "Event '${{ github.event.action }}' received. Passed: ${{ github.event.client_payload.passed }}, failed: '${{ github.event.client_payload.passed }}'"
+          echo "Event '${{ github.event.action }}' received. Passed: ${{ github.event.client_payload.passed }}, failed: '${{ github.event.client_payload.failed }}'"
