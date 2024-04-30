@@ -9,7 +9,7 @@ async function run() {
     } = process.env;
 
     let payload = {
-        event_type: "promoteToStaging",
+        event_type: "PromoteToStaging/randomEvent",
         client_payload: {
             passed: 9,
             failed: 1

@@ -2,7 +2,8 @@ name: Example repo dispatch
 
 on:
   repository_dispatch:
-    types: [promoteToStaging]
+    types:
+      - PromoteToStaging/*
 
 jobs:
   example-deploy:
