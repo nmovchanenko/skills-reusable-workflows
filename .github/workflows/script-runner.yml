@@ -10,7 +10,6 @@ on:
         description: "Select Environment"
         required: false
         type: choice
-        default: "integration"
         options:
           - ''
           - "staging"
