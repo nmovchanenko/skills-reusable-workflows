@@ -8,17 +8,17 @@ on:
     inputs:
       environment_name:
         description: "Select Environment"
-        required: true
+        required: false
         type: choice
         default: "integration"
         options:
+          - ''
           - "staging"
           - "integration"
 
 permissions: write-all
 
 env:
-  isScheduled: ${{ github.event_name == 'schedule'}}
   environment_name: ${{ inputs.environment_name || 'staging'}}
 
 jobs:
@@ -33,17 +33,17 @@ jobs:
         run: env | sort
 
       - name: Run Script if isScheduled
-        if: env.isScheduled
+        if: ${{ github.event_name == 'schedule'}}
         run: |
           echo 'this is for scheduled only:'
-          echo ${{ env.isScheduled }}
+          echo ${{ github.event_name == 'schedule'}}
           echo ${{ env.environment_name }}
 
       - name: Run Script if NOT isScheduled
-        if: ${{ env.isScheduled == false}}
+        if: ${{ github.event_name != 'schedule'}}
         run: |
           echo 'this is for NOT scheduled only:'
-          echo ${{ env.isScheduled }}
+          echo ${{ github.event_name == 'schedule'}}
           echo ${{ env.environment_name }}
 
       - name: Run Playwright Tests
