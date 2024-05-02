@@ -32,6 +32,20 @@ jobs:
       - name: Print
         run: env | sort
 
+      - name: Run Script if isScheduled
+        if: ${{ env.isScheduled }}
+        run: |
+          echo 'this is for scheduled only:'
+          echo ${{ env.isScheduled }}
+          echo ${{ env.environment_name }}
+
+      - name: Run Script if NOT isScheduled
+        if: ${{ !env.isScheduled }}
+        run: |
+          echo 'this is for NOT scheduled only:'
+          echo ${{ env.isScheduled }}
+          echo ${{ env.environment_name }}
+
       - name: Run Playwright Tests
         shell: bash
         run: |
