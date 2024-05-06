@@ -54,7 +54,7 @@ jobs:
                 args.limitTests=testCaseIdentifiers
                 args.slackChannel=slackChannel
                 args.createTestRunInTestRail=createTestRunInTestRail
-                args.reportTitle=Report Title 1
+                reportTitle=Report Title 1
                 args.statusAutoinvite=statusAutoinvite
                 args.dispatchParams=dispatchParams' >> $GITHUB_ENV
 
@@ -68,7 +68,7 @@ jobs:
           echo ${{ env.isScheduled }}
           echo ${{ env.environment_name }}
           echo '--------'
-          echo ${{ env.args.reportTitle }}
+          echo ${{ env.reportTitle }}
           echo ${{ env.args.slackChannel }}
 
           ENV=${{ inputs.environment_name }} REPO_OWNER=${{ github.repository_owner }} REPO_NAME=${{ github.repository }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} node src/index.js
