@@ -48,19 +48,15 @@ jobs:
       - name: Run Playwright Tests
         shell: bash
         run: |
-          echo '{
-                "runId": "RUN_TOKEN",
-                "action": "getTestList",
-                "args": {
-                  "environment": "environment",
-                  "limitTests": "testCaseIdentifiers",
-                  "slackChannel": "slackChannel",
-                  "createTestRunInTestRail": "createTestRunInTestRail",
-                  "reportTitle": "reportTitle",
-                  "statusAutoinvite": "statusAutoinvite",
-                  "dispatchParams": "dispatchParams"
-                }
-              }'
+          echo 'runId=RUN_TOKEN
+                action=getTestList
+                args.environment=environment
+                args.limitTests=testCaseIdentifiers
+                args.slackChannel=slackChannel
+                args.createTestRunInTestRail=createTestRunInTestRail
+                args.reportTitle=Report Title 1
+                args.statusAutoinvite=statusAutoinvite
+                args.dispatchParams=dispatchParams' >> $GITHUB_ENV
 
       - name: Run Script
         run: |
@@ -71,5 +67,8 @@ jobs:
           echo ${{ secrets.github_token }}
           echo ${{ env.isScheduled }}
           echo ${{ env.environment_name }}
+          echo '--------'
+          echo ${{ env.args.reportTitle }}
+          echo ${{ env.args.slackChannel }}
 
           ENV=${{ inputs.environment_name }} REPO_OWNER=${{ github.repository_owner }} REPO_NAME=${{ github.repository }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} node src/index.js
