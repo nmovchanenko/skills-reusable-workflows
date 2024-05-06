@@ -48,15 +48,11 @@ jobs:
       - name: Run Playwright Tests
         shell: bash
         run: |
-          echo 'runId=RUN_TOKEN
-                action=getTestList
-                args.environment=environment
-                args.limitTests=testCaseIdentifiers
-                args.slackChannel=slackChannel
-                args.createTestRunInTestRail=createTestRunInTestRail
-                reportTitle=Report Title 1
-                args.statusAutoinvite=statusAutoinvite
-                args.dispatchParams=dispatchParams' >> $GITHUB_ENV
+          echo "enable_dispatch=true" >> $GITHUB_ENV
+          echo "service_version=v1" >> $GITHUB_ENV
+          echo "report_title=Monolith Deployment Criteria Test Run" >> $GITHUB_ENV
+          echo "token_prefix=monolith-deployment-criteria-test" >> $GITHUB_ENV
+          echo "slack_channel=TECH_QA_MONOLITH_DEPLOYMENT" >> $GITHUB_ENV
 
       - name: Run Script
         run: |
@@ -68,7 +64,7 @@ jobs:
           echo ${{ env.isScheduled }}
           echo ${{ env.environment_name }}
           echo '--------'
-          echo ${{ env.reportTitle }}
-          echo ${{ env.args.slackChannel }}
+          echo ${{ env.report_title }}
+          echo ${{ env.slack_channel }}
 
           ENV=${{ inputs.environment_name }} REPO_OWNER=${{ github.repository_owner }} REPO_NAME=${{ github.repository }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} node src/index.js
