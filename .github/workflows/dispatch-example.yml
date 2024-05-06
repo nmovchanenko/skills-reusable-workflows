@@ -1,9 +1,11 @@
 name: Example repo dispatch
 
+#on:
+#  repository_dispatch:
+#    types:
+#      - PromoteToStaging/*
+
 on:
-  repository_dispatch:
-    types:
-      - PromoteToStaging/*
 
 jobs:
   example-deploy:
