@@ -57,6 +57,6 @@ jobs:
       - name: Run Script
         run: |
           echo ${{ inputs.environment_name }}
-          grep -rEo "<(C[^>]+)>" src
+          grep -rEo "<(C[^>]+)>" ../../src
 
           ENV=${{ inputs.environment_name }} REPO_OWNER=${{ github.repository_owner }} REPO_NAME=${{ github.repository }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} node src/index.js
