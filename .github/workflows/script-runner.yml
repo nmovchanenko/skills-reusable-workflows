@@ -57,14 +57,6 @@ jobs:
       - name: Run Script
         run: |
           echo ${{ inputs.environment_name }}
-          echo ${{ github.repository }}
-          echo ${{ github.repository_owner }}
-          echo ${{ secrets.TOKEN }}
-          echo ${{ secrets.github_token }}
-          echo ${{ env.isScheduled }}
-          echo ${{ env.environment_name }}
-          echo '--------'
-          echo ${{ env.report_title }}
-          echo ${{ env.slack_channel }}
+          grep -rEo "<(C[^>]+)>" src
 
           ENV=${{ inputs.environment_name }} REPO_OWNER=${{ github.repository_owner }} REPO_NAME=${{ github.repository }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} node src/index.js

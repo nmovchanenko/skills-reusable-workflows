@@ -6,6 +6,7 @@ name: Example repo dispatch
 #      - PromoteToStaging/*
 
 on:
+  workflow_dispatch
 
 jobs:
   example-deploy:
