@@ -49,6 +49,7 @@ jobs:
         if: ${{ github.event_name != 'schedule'}}
         run: |
           echo 'this is for NOT scheduled only:'
+          echo "REPORT_TITLE=Monolith Nightly Test Run (Group 1)" >> $GITHUB_ENV
           echo ${{ github.event_name == 'schedule'}}
           echo ${{ env.environment_name }}
           echo ${{ env.TEST_TAG }}
@@ -61,6 +62,7 @@ jobs:
           echo "report_title=Monolith Deployment Criteria Test Run" >> $GITHUB_ENV
           echo "token_prefix=monolith-deployment-criteria-test" >> $GITHUB_ENV
           echo "slack_channel=TECH_QA_MONOLITH_DEPLOYMENT" >> $GITHUB_ENV
+          echo ${{REPORT_TITLE}}
 
       - name: Print
         run: env | sort
