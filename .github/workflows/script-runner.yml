@@ -49,7 +49,7 @@ jobs:
         if: ${{ github.event_name != 'schedule'}}
         run: |
           echo 'this is for NOT scheduled only:'
-          echo "REPORT_TITLE=Monolith Nightly Test Run (Group 1)" >> $GITHUB_ENV
+          echo "REPORT_TITLE='Monolith Nightly Test Run (Group 1)'" >> $GITHUB_ENV
           echo ${{ github.event_name == 'schedule'}}
           echo ${{ env.environment_name }}
           echo ${{ env.TEST_TAG }}
