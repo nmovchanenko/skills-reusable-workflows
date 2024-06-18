@@ -62,7 +62,7 @@ jobs:
           echo "report_title=Monolith Deployment Criteria Test Run" >> $GITHUB_ENV
           echo "token_prefix=monolith-deployment-criteria-test" >> $GITHUB_ENV
           echo "slack_channel=TECH_QA_MONOLITH_DEPLOYMENT" >> $GITHUB_ENV
-          echo ${{REPORT_TITLE}}
+          echo ${{ env.REPORT_TITLE }}
 
       - name: Print
         run: env | sort
