@@ -34,14 +34,13 @@ on:
 
 permissions: write-all
 
-env:
-  TEST_TAG: ${{ inputs.test_tag }}
-  ENVIRONMENT_NAME: ${{ inputs.environment_name  || 'staging' }}
-
 jobs:
   monolith_nightly:
     name: IQuality Monolith Nightly Tests
     runs-on: ubuntu-latest
+    env:
+      TEST_TAG: ${{ inputs.test_tag }}
+      ENVIRONMENT_NAME: ${{ inputs.environment_name  || 'staging' }}
     environment: ${{ env.ENVIRONMENT_NAME }}
     steps:
       - name: Set "Group 1" env on schedule
