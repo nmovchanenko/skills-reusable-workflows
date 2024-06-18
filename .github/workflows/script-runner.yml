@@ -1,76 +1,72 @@
-name: Run JS script
-
+name: Automation
 on:
   schedule:
-    - cron: '45 12 * * *'
-    - cron: '50 12 * * *'
-
+    - cron: "30 15 * * *"
+    - cron: "40 15 * * *"
+    - cron: "50 15 * * *"
+    - cron: "00 16 * * *"
   workflow_dispatch:
     inputs:
       environment_name:
         description: "Select Environment"
-        required: false
+        required: true
         type: choice
+        default: "staging"
         options:
-          - ''
           - "staging"
           - "integration"
+      test_tag:
+        description: "Run a group: 'monolith-nightly-group'"
+        required: true
+        type: choice
+        default: "monolith-nightly"
+        options:
+          - "monolith-nightly"
+          - "monolith-nightly-group-1"
+          - "monolith-nightly-group-2"
+          - "monolith-nightly-group-3"
+          - "monolith-nightly-group-4"
+      enable_testrail:
+        description: "Enable TestRail"
+        required: true
+        type: boolean
+        default: false
 
 permissions: write-all
 
 env:
-  environment_name: ${{ inputs.environment_name || 'staging'}}
+  TEST_TAG: ${{ inputs.test_tag }}
+  ENVIRONMENT_NAME: ${{ inputs.environment_name  || 'staging' }}
 
 jobs:
-  ping:
+  monolith_nightly:
+    name: IQuality Monolith Nightly Tests
     runs-on: ubuntu-latest
+    environment: ${{ env.ENVIRONMENT_NAME }}
     steps:
-      - name: Set test tag to "@msa-nightly"
-        if: github.event.schedule == '45 12 * * *'
-        run: echo "TEST_TAG=@msa-nightly" >> $GITHUB_ENV
+      - name: Set "Group 1" env on schedule
+        if: github.event.schedule == '00 06 * * *'
+        run: echo "TEST_TAG=monolith-nightly-group-1" >> $GITHUB_ENV
 
-      - name: Set test tag to "@quoteservice-feature"
-        if: github.event.schedule == '50 12 * * *'
-        run: echo "TEST_TAG=@quoteservice-feature" >> $GITHUB_ENV
+      - name: Set "Group 2" env on schedule
+        if: github.event.schedule == '10 06 * * *'
+        run: echo "TEST_TAG=monolith-nightly-group-2" >> $GITHUB_ENV
 
-      - uses: actions/checkout@v2
-      - name: Install packages
-        run: npm i
+      - name: Set "Group 3" env on schedule
+        if: github.event.schedule == '20 06 * * *'
+        run: echo "TEST_TAG=monolith-nightly-group-3" >> $GITHUB_ENV
 
-      - name: Run Script if isScheduled
-        if: ${{ github.event_name == 'schedule'}}
-        run: |
-          echo 'this is for scheduled only:'
-          echo ${{ github.event_name == 'schedule'}}
-          echo ${{ env.environment_name }}
-          echo ${{ env.TEST_TAG }}
+      - name: Set "Group 4" env on schedule
+        if: github.event.schedule == '30 06 * * *'
+        run: echo "TEST_TAG=monolith-nightly-group-4" >> $GITHUB_ENV
 
-      - name: Run Script if NOT isScheduled
-        if: ${{ github.event_name != 'schedule'}}
-        run: |
-          echo 'this is for NOT scheduled only:'
-          echo "REPORT_TITLE='Monolith Nightly Test Run (Group 1)'" >> $GITHUB_ENV
-          echo ${{ github.event_name == 'schedule'}}
-          echo ${{ env.environment_name }}
-          echo ${{ env.TEST_TAG }}
-
-      - name: Run Playwright Tests
-        shell: bash
-        run: |
-          echo "enable_dispatch=true" >> $GITHUB_ENV
-          echo "service_version=v1" >> $GITHUB_ENV
-          echo "report_title=Monolith Deployment Criteria Test Run" >> $GITHUB_ENV
-          echo "token_prefix=monolith-deployment-criteria-test" >> $GITHUB_ENV
-          echo "slack_channel=TECH_QA_MONOLITH_DEPLOYMENT" >> $GITHUB_ENV
-          echo ${{ env.REPORT_TITLE }}
-
-      - name: Print
+      - name: Print Env list
         run: env | sort
 
-      # - name: Run Script
-      #   run: |
-      #     ls
-      #     grep -rEo "<(C[^>]+)>" src
-      #     grep -rEo "<(C[^>]+)>" src | grep -Eo C"\d+"
-
-      #     ENV=${{ inputs.environment_name }} REPO_OWNER=${{ github.repository_owner }} REPO_NAME=${{ github.repository }} GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} node src/index.js
+      - name: Invoke AWS Step Function
+        run: |
+          echo "Monolith Nightly Test Run (${{ env.TEST_TAG }})"
+          echo "runTokenPrefix: ${{ env.TEST_TAG }}"
+          echo "environment: ${{ env.ENVIRONMENT_NAME }}"
+          echo "testCaseIdentifiers: '[@${{ env.TEST_TAG }}]'"
+          echo "slackChannel: tech_qa_monolith"
