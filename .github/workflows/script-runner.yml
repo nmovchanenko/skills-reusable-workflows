@@ -23,6 +23,8 @@ env:
 
 jobs:
   ping:
+    env:
+      REPORT_TITLE: ""
     runs-on: ubuntu-latest
     steps:
       - name: Set test tag to "@msa-nightly"
