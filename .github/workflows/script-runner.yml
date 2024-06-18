@@ -2,8 +2,8 @@ name: Run JS script
 
 on:
   schedule:
-    - cron: '10 12 * * *'
-    - cron: '15 12 * * *'
+    - cron: '45 12 * * *'
+    - cron: '50 12 * * *'
 
   workflow_dispatch:
     inputs:
@@ -26,11 +26,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set test tag to "@msa-nightly"
-        if: github.event.schedule == '10 12 * * *'
+        if: github.event.schedule == '45 12 * * *'
         run: echo "TEST_TAG=@msa-nightly" >> $GITHUB_ENV
 
       - name: Set test tag to "@quoteservice-feature"
-        if: github.event.schedule == '15 12 * * *'
+        if: github.event.schedule == '50 12 * * *'
         run: echo "TEST_TAG=@quoteservice-feature" >> $GITHUB_ENV
 
       - uses: actions/checkout@v2
