@@ -7,30 +7,25 @@ on:
     - cron: "00 16 * * *"
   workflow_dispatch:
     inputs:
-      environment_name:
-        description: "Select Environment"
+      environment:
+        description: "Select environment to run test"
         required: true
         type: choice
-        default: "staging"
         options:
-          - "staging"
-          - "integration"
+          - integration
+          - staging
       test_tag:
-        description: "Run a group: 'monolith-nightly-group'"
+        description: "Test tags to run"
         required: true
         type: choice
-        default: "monolith-nightly"
+        default: "msa-nightly"
         options:
-          - "monolith-nightly"
-          - "monolith-nightly-group-1"
-          - "monolith-nightly-group-2"
-          - "monolith-nightly-group-3"
-          - "monolith-nightly-group-4"
-      enable_testrail:
-        description: "Enable TestRail"
-        required: true
-        type: boolean
-        default: false
+          - "msa-nightly"
+          - "quoteservice-feature"
+
+  repository_dispatch:
+    types:
+      - MSARegression/*
 
 permissions: write-all
 
@@ -40,12 +35,13 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TEST_TAG: ${{ inputs.test_tag }}
-      ENVIRONMENT_NAME: ${{ inputs.environment_name  || 'staging' }}
-    environment: ${{ inputs.environment_name  || 'staging' }}
+      ENVIRONMENT: ${{ github.event_name == 'schedule' && 'staging' || (github.event_name == 'repository_dispatch' && github.event.client_payload.environment || inputs.environment )}}
+      SERVICE: ${{ github.event_name == 'repository_dispatch' && github.event.client_payload.serviceName || 'all' }}
+    environment: ${{ github.event_name == 'schedule' && 'staging' || (github.event_name == 'repository_dispatch' && github.event.client_payload.environment || inputs.environment )}}
     steps:
       - name: Set dispatch param if conditions meet
         id: set_dispatch_param
-        if: github.event_name == 'repository_dispatch' && env.ENVIRONMENT_NAME == 'integration'
+        if: ${{ github.event_name == 'repository_dispatch' }} && ${{env.ENVIRONMENT_NAME == 'integration' }}
         run: |
           echo "TEST_TAG=msa-nightly" >> $GITHUB_ENV
           echo "dispatchParams={\"enabled\": \"true\", \"minPassRate\": \"50\", \"type\": \"PromoteToStaging/${{ env.SERVICE }}\", \"version\": {\"services\":\"${{ env.SERVICE }}\"}, \"repo\": \"theguarantors/tg-fluxcd\" }" >> $GITHUB_OUTPUT
