@@ -41,7 +41,7 @@ jobs:
     steps:
       - name: Set dispatch param if conditions meet
         id: set_dispatch_param
-        if: ${{ github.event_name == 'repository_dispatch' }} && ${{env.ENVIRONMENT_NAME == 'integration' }}
+        if: github.event_name == 'repository_dispatch' && env.ENVIRONMENT_NAME == 'integration'
         run: |
           echo "TEST_TAG=msa-nightly" >> $GITHUB_ENV
           echo "dispatchParams={\"enabled\": \"true\", \"minPassRate\": \"50\", \"type\": \"PromoteToStaging/${{ env.SERVICE }}\", \"version\": {\"services\":\"${{ env.SERVICE }}\"}, \"repo\": \"theguarantors/tg-fluxcd\" }" >> $GITHUB_OUTPUT
