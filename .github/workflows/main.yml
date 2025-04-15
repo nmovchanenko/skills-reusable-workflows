@@ -80,7 +80,6 @@ on:
 
       app_status_3:
         description: "Select application 3 status"
-        required: true
         type: choice
         default: "-"
         options:
@@ -103,7 +102,6 @@ on:
 
       app_status_4:
         description: "Select application 4 status"
-        required: true
         type: choice
         default: "-"
         options:
@@ -126,7 +124,6 @@ on:
 
       app_status_5:
         description: "Select application 5 status"
-        required: true
         type: choice
         default: "-"
         options:
@@ -149,7 +146,6 @@ on:
 
       app_status_6:
         description: "Select application 6 status"
-        required: true
         type: choice
         default: "-"
         options:
