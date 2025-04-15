@@ -1,5 +1,4 @@
-name: Print Marvel Movies
-
+name: RaptorsMultiRenterDeals
 
 on:
   workflow_dispatch:
@@ -24,7 +23,7 @@ on:
           - "TG_engine_34806"
 
       building_id:
-        description: "Custom building id (should be assigned to qa.test.landlord@securiti.io)"
+        description: "Custom building id (should be assigned to qa.test.landlord@securiti.io). Will override the building selected above"
         type: string
 
       init_type:
@@ -39,21 +38,45 @@ on:
         description: "Select application 1 status"
         required: true
         type: choice
-        default: "Application Submitted"
+        default: "Application Submitted, JOSEPH, GILBERT, 666586249"
         options:
-          - "Account Created"
-          - "Uploading Documents"
-          - "Application Submitted"
+          - "Account Created, JOSEPH, GILBERT, 666586249"
+          - "Account Created, ERNESTO, FERNANDEZ, 666321789"
+          - "Account Created, QMFXC, CTAEQQJR, 666043071"
+          - "Account Created, BLZGQG, USYMS, 666024520"
+          - "Account Created, NREXTPZU, GDPKXARDI, 666022550"
+          - "Uploading Documents, JOSEPH, GILBERT, 666586249"
+          - "Uploading Documents, ERNESTO, FERNANDEZ, 666321789"
+          - "Uploading Documents, QMFXC, CTAEQQJR, 666043071"
+          - "Uploading Documents, BLZGQG, USYMS, 666024520"
+          - "Uploading Documents, NREXTPZU, GDPKXARDI, 666022550"
+          - "Application Submitted, JOSEPH, GILBERT, 666586249"
+          - "Application Submitted, ERNESTO, FERNANDEZ, 666321789"
+          - "Application Submitted, QMFXC, CTAEQQJR, 666043071"
+          - "Application Submitted, BLZGQG, USYMS, 666024520"
+          - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
 
       app_status_2:
         description: "Select application 2 status"
         required: true
         type: choice
-        default: "Application Submitted"
+        default: "Application Submitted, JOSEPH, GILBERT, 666586249"
         options:
-          - "Account Created"
-          - "Uploading Documents"
-          - "Application Submitted"
+          - "Account Created, JOSEPH, GILBERT, 666586249"
+          - "Account Created, ERNESTO, FERNANDEZ, 666321789"
+          - "Account Created, QMFXC, CTAEQQJR, 666043071"
+          - "Account Created, BLZGQG, USYMS, 666024520"
+          - "Account Created, NREXTPZU, GDPKXARDI, 666022550"
+          - "Uploading Documents, JOSEPH, GILBERT, 666586249"
+          - "Uploading Documents, ERNESTO, FERNANDEZ, 666321789"
+          - "Uploading Documents, QMFXC, CTAEQQJR, 666043071"
+          - "Uploading Documents, BLZGQG, USYMS, 666024520"
+          - "Uploading Documents, NREXTPZU, GDPKXARDI, 666022550"
+          - "Application Submitted, JOSEPH, GILBERT, 666586249"
+          - "Application Submitted, ERNESTO, FERNANDEZ, 666321789"
+          - "Application Submitted, QMFXC, CTAEQQJR, 666043071"
+          - "Application Submitted, BLZGQG, USYMS, 666024520"
+          - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
 
       app_status_3:
         description: "Select application 3 status"
@@ -62,9 +85,21 @@ on:
         default: "-"
         options:
           - "-"
-          - "Account Created"
-          - "Uploading Documents"
-          - "Application Submitted"
+          - "Account Created, JOSEPH, GILBERT, 666586249"
+          - "Account Created, ERNESTO, FERNANDEZ, 666321789"
+          - "Account Created, QMFXC, CTAEQQJR, 666043071"
+          - "Account Created, BLZGQG, USYMS, 666024520"
+          - "Account Created, NREXTPZU, GDPKXARDI, 666022550"
+          - "Uploading Documents, JOSEPH, GILBERT, 666586249"
+          - "Uploading Documents, ERNESTO, FERNANDEZ, 666321789"
+          - "Uploading Documents, QMFXC, CTAEQQJR, 666043071"
+          - "Uploading Documents, BLZGQG, USYMS, 666024520"
+          - "Uploading Documents, NREXTPZU, GDPKXARDI, 666022550"
+          - "Application Submitted, JOSEPH, GILBERT, 666586249"
+          - "Application Submitted, ERNESTO, FERNANDEZ, 666321789"
+          - "Application Submitted, QMFXC, CTAEQQJR, 666043071"
+          - "Application Submitted, BLZGQG, USYMS, 666024520"
+          - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
 
       app_status_4:
         description: "Select application 4 status"
@@ -73,9 +108,21 @@ on:
         default: "-"
         options:
           - "-"
-          - "Account Created"
-          - "Uploading Documents"
-          - "Application Submitted"
+          - "Account Created, JOSEPH, GILBERT, 666586249"
+          - "Account Created, ERNESTO, FERNANDEZ, 666321789"
+          - "Account Created, QMFXC, CTAEQQJR, 666043071"
+          - "Account Created, BLZGQG, USYMS, 666024520"
+          - "Account Created, NREXTPZU, GDPKXARDI, 666022550"
+          - "Uploading Documents, JOSEPH, GILBERT, 666586249"
+          - "Uploading Documents, ERNESTO, FERNANDEZ, 666321789"
+          - "Uploading Documents, QMFXC, CTAEQQJR, 666043071"
+          - "Uploading Documents, BLZGQG, USYMS, 666024520"
+          - "Uploading Documents, NREXTPZU, GDPKXARDI, 666022550"
+          - "Application Submitted, JOSEPH, GILBERT, 666586249"
+          - "Application Submitted, ERNESTO, FERNANDEZ, 666321789"
+          - "Application Submitted, QMFXC, CTAEQQJR, 666043071"
+          - "Application Submitted, BLZGQG, USYMS, 666024520"
+          - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
 
       app_status_5:
         description: "Select application 5 status"
@@ -84,9 +131,21 @@ on:
         default: "-"
         options:
           - "-"
-          - "Account Created"
-          - "Uploading Documents"
-          - "Application Submitted"
+          - "Account Created, JOSEPH, GILBERT, 666586249"
+          - "Account Created, ERNESTO, FERNANDEZ, 666321789"
+          - "Account Created, QMFXC, CTAEQQJR, 666043071"
+          - "Account Created, BLZGQG, USYMS, 666024520"
+          - "Account Created, NREXTPZU, GDPKXARDI, 666022550"
+          - "Uploading Documents, JOSEPH, GILBERT, 666586249"
+          - "Uploading Documents, ERNESTO, FERNANDEZ, 666321789"
+          - "Uploading Documents, QMFXC, CTAEQQJR, 666043071"
+          - "Uploading Documents, BLZGQG, USYMS, 666024520"
+          - "Uploading Documents, NREXTPZU, GDPKXARDI, 666022550"
+          - "Application Submitted, JOSEPH, GILBERT, 666586249"
+          - "Application Submitted, ERNESTO, FERNANDEZ, 666321789"
+          - "Application Submitted, QMFXC, CTAEQQJR, 666043071"
+          - "Application Submitted, BLZGQG, USYMS, 666024520"
+          - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
 
       app_status_6:
         description: "Select application 6 status"
@@ -95,9 +154,23 @@ on:
         default: "-"
         options:
           - "-"
-          - "Account Created"
-          - "Uploading Documents"
-          - "Application Submitted"
+          - "Account Created, JOSEPH, GILBERT, 666586249"
+          - "Account Created, ERNESTO, FERNANDEZ, 666321789"
+          - "Account Created, QMFXC, CTAEQQJR, 666043071"
+          - "Account Created, BLZGQG, USYMS, 666024520"
+          - "Account Created, NREXTPZU, GDPKXARDI, 666022550"
+          - "Uploading Documents, JOSEPH, GILBERT, 666586249"
+          - "Uploading Documents, ERNESTO, FERNANDEZ, 666321789"
+          - "Uploading Documents, QMFXC, CTAEQQJR, 666043071"
+          - "Uploading Documents, BLZGQG, USYMS, 666024520"
+          - "Uploading Documents, NREXTPZU, GDPKXARDI, 666022550"
+          - "Application Submitted, JOSEPH, GILBERT, 666586249"
+          - "Application Submitted, ERNESTO, FERNANDEZ, 666321789"
+          - "Application Submitted, QMFXC, CTAEQQJR, 666043071"
+          - "Application Submitted, BLZGQG, USYMS, 666024520"
+          - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
+
+
 env:
   JSON_INPUT: ${{ github.event.inputs.movie_as_json }}
       
