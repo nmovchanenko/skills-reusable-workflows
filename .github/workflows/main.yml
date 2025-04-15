@@ -23,6 +23,10 @@ on:
           - "exNYC, Multi renter deal, REN-5835"
           - "TG_engine_34806"
 
+      building_id:
+        description: "Custom building id (should be assigned to qa.test.landlord@securiti.io)"
+        type: string
+
       init_type:
         description: "Init by"
         required: true
