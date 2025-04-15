@@ -1,10 +1,99 @@
 name: Print Marvel Movies
 
+
 on:
   workflow_dispatch:
     inputs:
-      movie_as_json:
-        default: ""
+      environment_name:
+        description: "Select Environment"
+        required: true
+        type: choice
+        default: "staging"
+        options:
+          - "staging"
+          - "integration"
+
+      building_template:
+        description: "Select Building Name"
+        required: true
+        type: choice
+        default: "Automation Property REN-5835"
+        options:
+          - "Automation Property REN-5835"
+          - "exNYC, Multi renter deal, REN-5835"
+          - "TG_engine_34806"
+
+      init_type:
+        description: "Init by"
+        required: true
+        type: choice
+        default: "Landlord invite"
+        options:
+          - "Landlord invite"
+
+      app_status_1:
+        description: "Select application 1 status"
+        required: true
+        type: choice
+        default: "Application Submitted"
+        options:
+          - "Account Created"
+          - "Uploading Documents"
+          - "Application Submitted"
+
+      app_status_2:
+        description: "Select application 2 status"
+        required: true
+        type: choice
+        default: "Application Submitted"
+        options:
+          - "Account Created"
+          - "Uploading Documents"
+          - "Application Submitted"
+
+      app_status_3:
+        description: "Select application 3 status"
+        required: true
+        type: choice
+        default: "-"
+        options:
+          - "-"
+          - "Account Created"
+          - "Uploading Documents"
+          - "Application Submitted"
+
+      app_status_4:
+        description: "Select application 4 status"
+        required: true
+        type: choice
+        default: "-"
+        options:
+          - "-"
+          - "Account Created"
+          - "Uploading Documents"
+          - "Application Submitted"
+
+      app_status_5:
+        description: "Select application 5 status"
+        required: true
+        type: choice
+        default: "-"
+        options:
+          - "-"
+          - "Account Created"
+          - "Uploading Documents"
+          - "Application Submitted"
+
+      app_status_6:
+        description: "Select application 6 status"
+        required: true
+        type: choice
+        default: "-"
+        options:
+          - "-"
+          - "Account Created"
+          - "Uploading Documents"
+          - "Application Submitted"
 env:
   JSON_INPUT: ${{ github.event.inputs.movie_as_json }}
       
