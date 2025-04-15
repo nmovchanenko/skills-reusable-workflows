@@ -1,0 +1,43 @@
+name: Print Marvel Movies
+
+on:
+  workflow_dispatch:
+    inputs:
+      movie_as_json:
+        default: ""
+env:
+  JSON_INPUT: ${{ github.event.inputs.movie_as_json }}
+      
+jobs:
+  welcome-to-marvel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: set inputs as variables
+        run: |
+          echo -e "First_Movie=$(echo $JSON_INPUT | jq ".First_Movie")" >> $GITHUB_ENV
+          echo -e "Second_Movie=$(echo $JSON_INPUT | jq ".Second_Movie")" >> $GITHUB_ENV
+          echo -e "Third_Movie=$(echo $JSON_INPUT | jq ".Third_Movie")" >> $GITHUB_ENV
+          echo -e "Fourth_Movie=$(echo $JSON_INPUT | jq ".Fourth_Movie")" >> $GITHUB_ENV
+          echo -e "Fifth_Movie=$(echo $JSON_INPUT | jq ".Fifth_Movie")" >> $GITHUB_ENV
+          echo -e "Sixth_Movie=$(echo $JSON_INPUT | jq ".Sixth_Movie")" >> $GITHUB_ENV
+          echo -e "Seventh_Movie=$(echo $JSON_INPUT | jq ".Seventh_Movie")" >> $GITHUB_ENV
+          echo -e "Eighth_Movie=$(echo $JSON_INPUT | jq ".Eighth_Movie")" >> $GITHUB_ENV
+          echo -e "Ninth_Movie=$(echo $JSON_INPUT | jq ".Ninth_Movie")" >> $GITHUB_ENV
+          echo -e "Tenth_Movie=$(echo $JSON_INPUT | jq ".Tenth_Movie")" >> $GITHUB_ENV
+          echo -e "Eleventh_Movie=$(echo $JSON_INPUT | jq ".Eleventh_Movie")" >> $GITHUB_ENV
+          echo -e "Twelfth_Movie=$(echo $JSON_INPUT | jq ".Twelfth_Movie")" >> $GITHUB_ENV
+      
+      - name: Print movies list
+        run: |
+          echo "First_Movie= ${{ env.First_Movie }}"
+          echo "Second_Movie= ${{ env.Second_Movie }}"
+          echo "Third_Movie= ${{ env.Third_Movie }}"
+          echo "Fourth_Movie= ${{ env.Fourth_Movie }}"
+          echo "Fifth_Movie= ${{ env.Fifth_Movie }}"
+          echo "Sixth_Movie= ${{ env.Sixth_Movie }}"
+          echo "Seventh_Movie= ${{ env.Seventh_Movie }}"
+          echo "Eighth_Movie= ${{ env.Eighth_Movie }}"
+          echo "Ninth_Movie= ${{ env.Ninth_Movie }}"
+          echo "Tenth_Movie= ${{ env.Tenth_Movie }}"
+          echo "Eleventh_Movie= ${{ env.Eleventh_Movie }}"
+          echo "Twelfth_Movie= ${{ env.Twelfth_Movie }}"
