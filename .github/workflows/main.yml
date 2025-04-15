@@ -34,8 +34,8 @@ on:
         options:
           - "Landlord invite"
 
-      app_status_1:
-        description: "Select application 1 status"
+      app_template_1:
+        description: "Select application 1 Status, FirstName, LastName, SSN"
         required: true
         type: choice
         default: "Application Submitted, JOSEPH, GILBERT, 666586249"
@@ -56,8 +56,8 @@ on:
           - "Application Submitted, BLZGQG, USYMS, 666024520"
           - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
 
-      app_status_2:
-        description: "Select application 2 status"
+      app_template_2:
+        description: "Select application 2 Status, FirstName, LastName, SSN"
         required: true
         type: choice
         default: "Application Submitted, JOSEPH, GILBERT, 666586249"
@@ -78,8 +78,9 @@ on:
           - "Application Submitted, BLZGQG, USYMS, 666024520"
           - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
 
-      app_status_3:
-        description: "Select application 3 status"
+      app_template_3:
+        description: "Select application 3 Status, FirstName, LastName, SSN"
+        required: true
         type: choice
         default: "-"
         options:
@@ -100,8 +101,9 @@ on:
           - "Application Submitted, BLZGQG, USYMS, 666024520"
           - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
 
-      app_status_4:
-        description: "Select application 4 status"
+      app_template_4:
+        description: "Select application 4 Status, FirstName, LastName, SSN"
+        required: true
         type: choice
         default: "-"
         options:
@@ -122,8 +124,9 @@ on:
           - "Application Submitted, BLZGQG, USYMS, 666024520"
           - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
 
-      app_status_5:
-        description: "Select application 5 status"
+      app_template_5:
+        description: "Select application 5 Status, FirstName, LastName, SSN"
+        required: true
         type: choice
         default: "-"
         options:
@@ -144,8 +147,9 @@ on:
           - "Application Submitted, BLZGQG, USYMS, 666024520"
           - "Application Submitted, NREXTPZU, GDPKXARDI, 666022550"
 
-      app_status_6:
-        description: "Select application 6 status"
+      app_template_6:
+        description: "Select application 6 Status, FirstName, LastName, SSN"
+        required: true
         type: choice
         default: "-"
         options:
