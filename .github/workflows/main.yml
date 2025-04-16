@@ -42,6 +42,7 @@ on:
         options:
           - "Submitted, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Submitted, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Submitted, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Submitted, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Submitted, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Submitted, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -49,6 +50,7 @@ on:
           - "Submitted, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "DocUpload, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "DocUpload, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "DocUpload, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "DocUpload, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "DocUpload, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "DocUpload, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -56,12 +58,13 @@ on:
           - "DocUpload, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "Created, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Created, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Created, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Created, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Created, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Created, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Created, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
-
+      
       app_template_2:
         description: "Select application 2 Status, FICO, FirstName, LastName, SSN"
         required: true
@@ -70,6 +73,7 @@ on:
         options:
           - "Submitted, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Submitted, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Submitted, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Submitted, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Submitted, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Submitted, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -77,6 +81,7 @@ on:
           - "Submitted, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "DocUpload, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "DocUpload, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "DocUpload, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "DocUpload, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "DocUpload, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "DocUpload, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -84,12 +89,13 @@ on:
           - "DocUpload, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "Created, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Created, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Created, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Created, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Created, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Created, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Created, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
-
+      
       app_template_3:
         description: "Select application 3 Status, FICO, FirstName, LastName, SSN"
         required: true
@@ -99,13 +105,15 @@ on:
           - "-"
           - "Submitted, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Submitted, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Submitted, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Submitted, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Submitted, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
-          - "Submitted, fico_580, ofac_false, sl_750, 666000004, wedefnz, wngidw"
+          - "Submitted, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Submitted, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Submitted, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "DocUpload, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "DocUpload, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "DocUpload, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "DocUpload, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "DocUpload, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "DocUpload, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -113,12 +121,13 @@ on:
           - "DocUpload, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "Created, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Created, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Created, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Created, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Created, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Created, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Created, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
-
+      
       app_template_4:
         description: "Select application 4 Status, FICO, FirstName, LastName, SSN"
         required: true
@@ -128,6 +137,7 @@ on:
           - "-"
           - "Submitted, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Submitted, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Submitted, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Submitted, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Submitted, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Submitted, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -135,6 +145,7 @@ on:
           - "Submitted, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "DocUpload, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "DocUpload, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "DocUpload, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "DocUpload, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "DocUpload, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "DocUpload, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -142,12 +153,13 @@ on:
           - "DocUpload, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "Created, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Created, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Created, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Created, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Created, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Created, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Created, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
-
+      
       app_template_5:
         description: "Select application 5 Status, FICO, FirstName, LastName, SSN"
         required: true
@@ -157,6 +169,7 @@ on:
           - "-"
           - "Submitted, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Submitted, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Submitted, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Submitted, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Submitted, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Submitted, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -164,6 +177,7 @@ on:
           - "Submitted, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "DocUpload, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "DocUpload, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "DocUpload, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "DocUpload, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "DocUpload, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "DocUpload, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -171,12 +185,13 @@ on:
           - "DocUpload, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "Created, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Created, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Created, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Created, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Created, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Created, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Created, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
-
+      
       app_template_6:
         description: "Select application 6 Status, FICO, FirstName, LastName, SSN"
         required: true
@@ -186,6 +201,7 @@ on:
           - "-"
           - "Submitted, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Submitted, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Submitted, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Submitted, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Submitted, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Submitted, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -193,6 +209,7 @@ on:
           - "Submitted, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "DocUpload, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "DocUpload, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "DocUpload, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "DocUpload, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "DocUpload, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "DocUpload, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
@@ -200,6 +217,7 @@ on:
           - "DocUpload, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
           - "Created, fico_825, sl_390, ofac_true, 666586249, gilbert, joseph"
           - "Created, fico_770, sl_10, ofac_false, 666001464, qhpsz, nuiaafbhm"
+          - "Created, fico_700, sl_0, ofac_false, 555555554, sstoragetest, laura"
           - "Created, fico_624, sl_10, ofac_false, 666015670, nekj, kiiuyrq"
           - "Created, fico_613, sl_10, ofac_false, 666044730, zvtyzb, qytzj"
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
