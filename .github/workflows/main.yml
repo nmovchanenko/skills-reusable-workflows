@@ -35,7 +35,7 @@ on:
           - "Landlord invite"
 
       app_template_1:
-        description: "Application #1: Status, FICO, FirstName, LastName, SSN"
+        description: "Application #1: Status, FICO, SL Abuse Score, OFAC Alert, SSN, LastName, FirstName"
         required: true
         type: choice
         default: "Application Submitted, 825, JOSEPH, GILBERT, 666586249"
@@ -64,9 +64,9 @@ on:
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Created, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Created, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
-      
+
       app_template_2:
-        description: "Select application 2 Status, FICO, FirstName, LastName, SSN"
+        description: "Application #2: Status, FICO, SL Abuse Score, OFAC Alert, SSN, LastName, FirstName"
         required: true
         type: choice
         default: "Application Submitted, JOSEPH, GILBERT, 666586249"
@@ -95,9 +95,9 @@ on:
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Created, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Created, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
-      
+
       app_template_3:
-        description: "Select application 3 Status, FICO, FirstName, LastName, SSN"
+        description: "Application #3: Status, FICO, SL Abuse Score, OFAC Alert, SSN, LastName, FirstName"
         required: true
         type: choice
         default: "-"
@@ -127,9 +127,9 @@ on:
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Created, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Created, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
-      
+
       app_template_4:
-        description: "Select application 4 Status, FICO, FirstName, LastName, SSN"
+        description: "Application #4: Status, FICO, SL Abuse Score, OFAC Alert, SSN, LastName, FirstName"
         required: true
         type: choice
         default: "-"
@@ -159,9 +159,9 @@ on:
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Created, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Created, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
-      
+
       app_template_5:
-        description: "Select application 5 Status, FICO, FirstName, LastName, SSN"
+        description: "Application #5: Status, FICO, SL Abuse Score, OFAC Alert, SSN, LastName, FirstName"
         required: true
         type: choice
         default: "-"
@@ -191,9 +191,9 @@ on:
           - "Created, fico_580, sl_750, ofac_false, 666000004, wedefnz, wngidw"
           - "Created, fico_364, sl_10, ofac_false, 666004357, pgvbmj, ygvc"
           - "Created, fico_-1, sl_10, ofac_false, 666011377, pnulvy, arjijl"
-      
+
       app_template_6:
-        description: "Select application 6 Status, FICO, FirstName, LastName, SSN"
+        description: "Application #6: Status, FICO, SL Abuse Score, OFAC Alert, SSN, LastName, FirstName"
         required: true
         type: choice
         default: "-"
